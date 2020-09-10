@@ -1,0 +1,10 @@
+{
+	"sessionappnode": {
+		"input": {
+			"public": [ "input_field" ]			
+		},
+		"output": {
+			"sessionappnode": [ "output_field" ]
+		}		
+	}
+}

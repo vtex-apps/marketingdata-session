@@ -1,0 +1,21 @@
+{
+  "name": "sessionappnode",
+  "vendor": "vtex",
+  "version": "0.0.1",
+  "title": "Session App example",
+  "description": "Session App Boilerplate code - Node version",
+  "categories": [],
+  "settingsSchema": {},
+  "registries": [
+    "smartcheckout"
+  ],
+  "builders": {
+    "node": "4.x",
+    "vtex.session": "0.x"
+  },
+  "scripts": {
+    "prereleasy": "bash lint.sh",
+    "postreleasy": "vtex publish --verbose"
+  },
+  "$schema": "https://raw.githubusercontent.com/vtex/node-vtex-api/master/gen/manifest.schema"
+}

@@ -1,0 +1,10 @@
+{
+  "stack": "nodejs",
+  "memory": 128,
+  "routes": {    
+    "transform": {
+      "path": "/sessionappnode/transform",
+      "public": true
+    }
+  }
+}
