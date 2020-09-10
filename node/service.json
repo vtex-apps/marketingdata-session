@@ -3,7 +3,7 @@
   "memory": 128,
   "routes": {    
     "transform": {
-      "path": "/sessionappnode/transform",
+      "path": "/_v/sessionappnode/session/transform/",
       "public": true
     }
   }

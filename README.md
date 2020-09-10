@@ -38,13 +38,13 @@ This builder requires a **configuration.json** file in the **vtex.session** fold
 
 ## Required routes
 
-A session app must have a public route with the following path *{{name}}/transform*.
+A session app must have a public route with the following path */_v/{{name}}/session/transform*.
 ```
 ...
 "routes": {    
     ...,
     "transform": {
-      "path": "/sessionappnode/transform",
+      "path": "/_v/sessionappnode/session/transform/",
       "public": true
     }
   },
