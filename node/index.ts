@@ -1,17 +1,15 @@
-import {ColossusContext} from 'colossus'
+import { method, Service, ServiceContext } from '@vtex/api'
+import { process } from './middlewares/process'
 
-export default {
-  routes: {    
-    transform: async (ctx: ColossusContext) => {
-      ctx.set('Cache-Control', 'no-cache')
-      ctx.response.status = 200      
-      ctx.response.body = {
-        sessionappnode:{
-          output_field:{
-            value: "output_field_value"
-          } 
-        }
-      }
-    }
-  }
+declare global {
+  // We declare a global Context type just to avoid re-writing ServiceContext<Clients, State> in every handler and resolver
+  type Context = ServiceContext
 }
+
+export default new Service({
+  routes: {    
+    transform: method ({
+      POST: [process],
+    }),
+  },
+})
