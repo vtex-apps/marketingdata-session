@@ -12,9 +12,9 @@ export async function process(ctx: Context, next: () => Promise<any>) {
   // Define response
   ctx.response.status = 200      
   ctx.response.body = {
-    sessionappnode:{
-      output_field:{
-        value: "output_field_value"
+    public:{
+      utm_source:{
+        value: body["hello"]
       } 
     }
   }

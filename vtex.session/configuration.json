@@ -1,10 +1,11 @@
 {
 	"marketingdata": {
 		"input": {
-			"public": [ "input_field" ]			
+			"public": [ "gclid", "utm_source" ]			
 		},
 		"output": {
-			"marketingdata": [ "output_field" ]
+			"marketingdata": [ "output_field" ],
+			"public": [ "utm_source" ]
 		}		
 	}
 }
