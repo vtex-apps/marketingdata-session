@@ -1,10 +1,10 @@
 {
-	"sessionappnode": {
+	"marketingdata": {
 		"input": {
 			"public": [ "input_field" ]			
 		},
 		"output": {
-			"sessionappnode": [ "output_field" ]
+			"marketingdata": [ "output_field" ]
 		}		
 	}
 }

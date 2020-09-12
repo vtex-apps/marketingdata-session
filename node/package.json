@@ -1,6 +1,4 @@
 {
-  "name": "vtex.sessionappnode",
-  "version": "0.0.1",
   "dependencies": {
     "axios": "^0.18.0",
     "co-body": "^6.0.0",
