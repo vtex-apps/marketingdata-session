@@ -3,14 +3,16 @@
   "version": "0.0.1",
   "dependencies": {
     "axios": "^0.18.0",
+    "co-body": "^6.0.0",
     "ramda": "^0.25.0"
   },
   "devDependencies": {
     "@types/axios": "^0.14.0",
+    "@types/co-body": "^0.0.3",
     "@types/koa": "^2.0.39",
     "@types/node": "8.x",
     "@types/ramda": "types/npm-ramda#dist",
-    "@vtex/api": "^3.0.0",
+    "@vtex/api": "3.8.1",
     "tslint": "^5.8.0",
     "tslint-config-vtex": "^2.0.0",
     "typescript": "3.8.3"
