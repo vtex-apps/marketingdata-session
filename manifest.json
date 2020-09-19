@@ -1,9 +1,9 @@
 {
-  "name": "session-marketingdata",
+  "name": "marketingdata-session",
   "vendor": "vtex",
   "version": "0.0.1",
-  "title": "Session App example",
-  "description": "Session App Boilerplate code - Node version",
+  "title": "Session App for MarketingData",
+  "description": "Handles marketingData namespace",
   "categories": [],
   "settingsSchema": {},
   "registries": [
