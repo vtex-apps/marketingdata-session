@@ -1,16 +1,5 @@
 import { json } from 'co-body'
 
-//import { forEach } from 'ramda'
-
-interface MarketingDataContent {
-  utm_source: string,
-  utm_medium?: string,
-  utm_campaign?: string,
-  utmi_cp?: string,
-  utmi_p?: string,
-  utmi_pc?: string
-}
-
 interface SessionField {
   value: string
 }
@@ -28,37 +17,16 @@ export async function process(ctx: Context, next: () => Promise<any>) {
   
   // Parse request body
   //console.log("ResquestContent:", await text(ctx.req))
-  const sessionContent : SessionContent = await json(ctx.req)
+  let sessionContent : SessionContent = await json(ctx.req)
   console.log("SessionContent:", sessionContent)
-  let marketingDataContent : MarketingDataContent = {
-    utm_source: ""
-  } 
   
-  // Perform any content calculation
-  // Note: if none of these values are available, this service will not be called.
-  if(sessionContent.public?.utm_source) {
-    marketingDataContent.utm_source = sessionContent.public.utm_source.value
-  } else if(sessionContent.public?.gclid) {
-    marketingDataContent.utm_source = "Google"
+  // Perform any content calculation and build session new content
+  let sessionNewContent : SessionContent = {}
+  if(!sessionContent.public?.utm_source && sessionContent.public?.gclid) {
+    sessionContent.public["utm_source"] = { value: "Google" }
+    sessionNewContent["public"] = { utm_source : sessionContent.public["utm_source"]}
   }
-
-  // Build namespace content
-  //let marketingDataSessionContent : SessionNamespaceContent = {} 
-
-  // Build session new content
-  // TODO: send public marketingdata content to proper namespace
-  let sessionNewContent : SessionContent = {
-    public:{
-      utm_source:{
-        value: marketingDataContent.utm_source
-      } 
-    },
-    marketingdata: {
-      utm_source:{
-        value: marketingDataContent.utm_source
-      }
-    }
-  }
+  sessionNewContent["marketingdata"] = sessionContent.public
 
   // Define response
   ctx.response.status = 200
