@@ -1,7 +1,7 @@
 {
   "name": "marketingdata-session",
   "vendor": "vtex",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "title": "Session App for MarketingData",
   "description": "Handles marketingData namespace",
   "categories": [],
